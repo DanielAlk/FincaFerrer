@@ -8,11 +8,11 @@
 		<div class="navigation">
 			<nav role="navigation">
 				<ul class="list-inline">
-					<li><%= link_to 'Home', root_path, class: 'active' %></li>
-					<li><%= link_to 'Nuestra bodega', root_path %></li>
-					<li><%= link_to 'Productos', root_path %></li>
-					<li><%= link_to 'Novedades', root_path %></li>
-					<li><%= link_to 'Contacto', root_path %></li>
+					<li><%= link_to 'Home', root_path, class: nav_class('home') %></li>
+					<li><%= link_to 'Nuestra bodega', about_path, class: nav_class('about') %></li>
+					<li><%= link_to 'Productos', root_path, class: nav_class %></li>
+					<li><%= link_to 'Novedades', root_path, class: nav_class %></li>
+					<li><%= link_to 'Contacto', root_path, class: nav_class %></li>
 				</ul>
 			</nav>
 		</div>

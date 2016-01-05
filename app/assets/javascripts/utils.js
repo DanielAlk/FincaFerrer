@@ -22,3 +22,11 @@ Utils.startMap = function(elementId) {
 		};
 	});
 };
+
+Utils.nextSection = function() {
+	$('.NextSection').click(function(e) {
+		e.preventDefault();
+		var $target = $(this).parents('section').first().next();
+		$('html, body').stop(true, true).animate({ scrollTop: $target.offset().top });
+	});
+};

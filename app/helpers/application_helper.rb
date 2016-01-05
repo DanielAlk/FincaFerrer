@@ -5,8 +5,8 @@ module ApplicationHelper
 
 	def head_title
 		case params['action']
-		when 'home'
-			'Home | Finca Ferrer'
+		when 'about'
+			'Nuestra Bodega | Finca Ferrer'
 		else
 			'Finca Ferrer'
 		end
@@ -18,5 +18,18 @@ module ApplicationHelper
 
 	def head_og_image
 		''
+	end
+
+	def nav_class(action = nil)
+		'active' if action == params['action']
+	end
+
+	def main_image
+		case params['action']
+		when 'about'
+			asset_path 'field-and-mountains-big.jpg'
+		else
+			asset_path 'graves.jpg'
+		end
 	end
 end
