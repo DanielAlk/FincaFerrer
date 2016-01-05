@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
   def about
   end
-  def news
+  def awards
   end
   def contact
   end
