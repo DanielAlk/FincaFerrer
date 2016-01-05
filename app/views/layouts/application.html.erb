@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>FincaFerrer</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= render 'layouts/head' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/main_image' %>
 <%= yield %>
-
+<%= render 'layouts/footer' %>
+<script>
+  $(function() {
+  	<%= yield :extra_js if content_for? :extra_js %>
+  });
+</script>
+<%= yield :extra_script if content_for? :extra_script %>
 </body>
 </html>

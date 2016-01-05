@@ -1,0 +1,25 @@
+.content { padding: 80px 0; }
+.content-limit { max-width: 1440px; margin: 0 auto; }
+
+img.arrow-down { width: 32px; height: auto; }
+img.icon-facebook { width: 9px; height: auto; }
+
+a.tilted { font-weight: 600; font-style: italic; }
+a.corkscrew { position: relative; padding-left: 30px; }
+a.corkscrew:before { content: ''; position: absolute; display: block; left: 0; width: 20px; height: 28px; background-image: url('<%= asset_path 'corkscrew.png' %>'); background-repeat: no-repeat; background-size: 100% auto; }
+
+section.title { background-color: #dad3c9; }
+section.title h1, section.title h2, section.title h3, section.title h4, section.title h5, section.title h6 { margin: 10px 0; }
+section.title.texture { color: #FFF; background-image: url('<%= asset_path 'title-texture.jpg' %>'); background-size: 100% 100%; }
+
+.divider { position: relative; border-bottom: 1px solid; width: calc(100% - 30px); margin: 40px auto; margin-left: 5px; }
+.divider span { background-image: url('<%= asset_path 'divider.png' %>'); background-size: 28px auto; background-position: center center; width: 50px; height: 20px; position: absolute; left: 50%; margin-left: -25px; background-repeat: no-repeat; top: 50%; margin-top: -10px; }
+
+
+/* CUSTOM FOR PRODUCTS IN HOME */
+section.products>.display:nth-child(even) .display-image-container { float: left; text-align: right; }
+
+/* CUSTOM FOR NEWSLETTER SECTION IN HOME */
+.newsletter-form-container {max-width: 465px; padding-right: 15px;}
+.map-home { width: 50%; height: 100%; position: absolute; top: 0; left: 50%; z-index: 99; }
+.map-home>div { height: 100%; }

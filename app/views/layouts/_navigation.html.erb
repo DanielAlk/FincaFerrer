@@ -1,0 +1,29 @@
+<header>
+	<div class="header-container">
+		<div class="brand">
+			<%= link_to root_path do %>
+				<%= image_tag 'logo-finca-ferrer.png' %>
+			<% end %>
+		</div>
+		<div class="navigation">
+			<nav role="navigation">
+				<ul class="list-inline">
+					<li><%= link_to 'Home', root_path, class: 'active' %></li>
+					<li><%= link_to 'Nuestra bodega', root_path %></li>
+					<li><%= link_to 'Productos', root_path %></li>
+					<li><%= link_to 'Novedades', root_path %></li>
+					<li><%= link_to 'Contacto', root_path %></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="header-social">
+			<div class="header-social-container">
+				<%= link_to '#', class: 'facebook' do %>
+					<%= image_tag 'icon-facebook.png', class: 'icon-facebook' %>
+				<% end %>
+				<p>Seguinos en Facebook y conectate con nosotros</p>
+				<a href="#" class="btn btn-default">Me Gusta</a>
+			</div>
+		</div>
+	</div>
+</header>

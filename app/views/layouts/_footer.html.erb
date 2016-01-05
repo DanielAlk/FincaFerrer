@@ -1,0 +1,55 @@
+<footer>
+	<div class="container">
+		<div class="col-sm-4">
+			<div class="brand">
+				<%= link_to root_path do %>
+					<%= image_tag 'logo-finca-ferrer-black.png' %>
+				<% end %>
+			</div>
+			<ul class="list-unstyled footer-data">
+				<li>
+					<%= image_tag 'icon-place.png' %>
+					Avenida Sucre 2074, 1er piso, Of 6, B1643AQO Beccar, Buuenos Aires, Argentina.
+				</li>
+				<li>
+					<%= image_tag 'icon-cellphone.png' %>
+					<%= link_to '+54 11 4719 7320', 'tel:+541147197320' %>
+				</li>
+				<li>
+					<%= image_tag 'icon-mail.png' %>
+					<%= link_to 'contacto@fincaferrer.com', 'mailto:contacto@fincaferrer.com' %>
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-3">
+			<div class="footer-social">
+				<%= image_tag 'icon-facebook-black.png' %>
+				<p>Seguinos en Facebook y conectate con nosotros</p>
+				<%= link_to 'Me Gusta', '#', class: 'btn btn-lg btn-primary' %>
+			</div>
+		</div>
+		<div class="col-sm-5">
+			<h3><i>Contactanos</i></h3>
+			<%= form_tag '#' do %>
+				<div class="form-group">
+					<%= text_field_tag 'name', nil, class: 'form-control', placeholder: 'Nombre' %>
+				</div>
+				<div class="form-group">
+					<%= email_field_tag 'email', nil, class: 'form-control', placeholder: 'Email' %>
+				</div>
+				<div class="form-group">
+					<%= text_area_tag 'Mensaje', nil, class: 'form-control', placeholder: 'Mensaje', rows: 3 %>
+				</div>
+				<div class="form-group">
+					<%= submit_tag 'Enviar Mensaje', class: 'btn btn-lg btn-primary' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="footer-footer">
+		&reg; 2015 - Finca Ferrer. Todos los derechos reservados. &nbsp;&nbsp;&nbsp; Powered by
+		<%= link_to 'http://www.vertigodesign.com.ar', taget: '_blank' do %>
+			<%= image_tag 'logo-vertigo.png' %>
+		<% end %>
+	</div>
+</footer>
