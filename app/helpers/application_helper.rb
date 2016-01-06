@@ -7,6 +7,8 @@ module ApplicationHelper
 		case params['action']
 		when 'about'
 			'Nuestra Bodega | Finca Ferrer'
+		when 'products'
+			'Productos | Finca Ferrer'
 		when 'news'
 			'Novedades | Finca Ferrer'
 		when 'awards'
@@ -36,6 +38,10 @@ module ApplicationHelper
 			asset_path 'field-and-mountains-big.jpg'
 		when 'awards'
 			asset_path 'field-and-houses.jpg'
+		when 'products'
+			asset_path 'sunrise.jpg'
+		when 'news'
+			asset_path 'field-and-clouds.jpg'
 		else
 			asset_path 'graves.jpg'
 		end
