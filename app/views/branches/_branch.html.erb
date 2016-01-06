@@ -1,0 +1,23 @@
+<% admin_actions = false unless local_assigns.has_key? :admin_actions %>
+<article class="display" style="background-color:<%= branch.color %>">
+	<div class="container">
+		<div class="display-image-container">
+			<%= image_tag branch.image(:normal), class: 'display-image' %>
+		</div>
+		<div class="display-caption">
+			<div class="display-caption-content">
+				<%= image_tag branch.logo(:normal) %>
+				<p><%= branch.text %></p>
+				<% if admin_actions %>
+					<div class="admin-actions">
+						<%= link_to 'Edit', edit_branch_path(branch) %> |
+						<%= link_to 'Back', branches_path %>
+					</div>
+				<% else %>
+					<%= link_to 'Ver más.', '#', class: 'tilted corkscrew' %>
+				<% end %>
+				<div class="divider"><span style="background-color:<%= branch.color %>"></span></div>
+			</div>
+		</div>
+	</div>
+</article>

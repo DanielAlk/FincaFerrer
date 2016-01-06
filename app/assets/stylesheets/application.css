@@ -10,6 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ * require_tree .
+ *= require _bootstrap_import
+ *= require main
+ *= require header
+ *= require footer
+ *= require buttons
+ *= require cards
+ *= require display
+ *= require article
+ *= require split
+ *= require form
+ *= require main-image
+ *= require custom
  *= require_self
  */
