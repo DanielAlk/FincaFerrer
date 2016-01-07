@@ -1,6 +1,9 @@
 class Branch < ActiveRecord::Base
 	extend FriendlyId
   friendly_id :title, use: :slugged
+	
+	has_many :products
+
 	has_attached_file :logo,
 										styles: { normal: "x100>" },
 										convert_options: { normal: "-quality 75 -strip" }

@@ -17,6 +17,10 @@ section.title.texture { color: #FFF; background-image: url('<%= asset_path 'titl
 .divider.grey { color: #c6bfb6; }
 .divider.grey span { background-image: url('<%= asset_path 'divider-grey.png' %>'); }
 
+@media(min-width: 768px) {
+	.padding-odd-even:nth-child(odd) { padding-right: 8.33%; }
+	.padding-odd-even:nth-child(even) { padding-left: 8.33%; }
+}
 
 /* CUSTOM FOR PRODUCTS IN HOME */
 section.products>.display:nth-child(even) .display-image-container { float: left; text-align: right; }

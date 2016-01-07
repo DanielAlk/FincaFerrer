@@ -14,7 +14,7 @@
 						<%= link_to 'Back', branches_path %>
 					</div>
 				<% else %>
-					<%= link_to 'Ver más.', '#', class: 'tilted corkscrew' %>
+					<%= link_to 'Ver más.', products_page_path(branch), class: 'tilted corkscrew' %>
 				<% end %>
 				<div class="divider"><span style="background-color:<%= branch.color %>"></span></div>
 			</div>

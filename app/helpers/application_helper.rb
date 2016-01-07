@@ -7,8 +7,10 @@ module ApplicationHelper
 		case params['action']
 		when 'about'
 			'Nuestra Bodega | Finca Ferrer'
-		when 'products'
+		when 'branches'
 			'Productos | Finca Ferrer'
+		when 'products'
+			@branch.title + ' | Finca Ferrer'
 		when 'news'
 			'Novedades | Finca Ferrer'
 		when 'awards'
@@ -29,7 +31,11 @@ module ApplicationHelper
 	end
 
 	def nav_class(action = nil)
-		'active' if action == params['action']
+		if action.kind_of? Array
+			'active' if action.include? params['action']
+		else
+			'active' if action == params['action']
+		end
 	end
 
 	def main_image
@@ -39,6 +45,8 @@ module ApplicationHelper
 		when 'awards'
 			asset_path 'field-and-houses.jpg'
 		when 'products'
+			asset_path 'sunrise.jpg'
+		when 'branches'
 			asset_path 'sunrise.jpg'
 		when 'news'
 			asset_path 'field-and-clouds.jpg'

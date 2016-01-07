@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106141014) do
+ActiveRecord::Schema.define(version: 20160106224005) do
 
   create_table "branches", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -45,4 +45,23 @@ ActiveRecord::Schema.define(version: 20160106141014) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "products", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.text     "text",               limit: 65535
+    t.string   "file_file_name",     limit: 255
+    t.string   "file_content_type",  limit: 255
+    t.integer  "file_file_size",     limit: 4
+    t.datetime "file_updated_at"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.integer  "branch_id",          limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "products", ["branch_id"], name: "index_products_on_branch_id", using: :btree
+
+  add_foreign_key "products", "branches"
 end
