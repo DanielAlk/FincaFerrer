@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'productos' => 'pages#branches', as: :branches_page
   get 'productos/:branch_id' => 'pages#products', as: :products_page
   get 'novedades' => 'pages#news', as: :news
+  get 'novedades/:article_id' => 'pages#news_article', as: :news_article
   get 'premios' => 'pages#awards', as: :awards
   get 'contacto' => 'pages#contact', as: :contact
 
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :branches
   resources :products
   resources :subscribers
+  resources :articles
 
   # Example resource route with options:
   #   resources :products do

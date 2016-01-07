@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_action :set_branch, only: [:products]
 
   def home
+    @articles = Article.order("RAND()").take(4)
   end
   def about
   end
@@ -13,6 +14,10 @@ class PagesController < ApplicationController
   def awards
   end
   def news
+    @articles = Article.all
+  end
+  def news_article
+    @article = Article.friendly.find(params[:article_id])
   end
   def contact
   end

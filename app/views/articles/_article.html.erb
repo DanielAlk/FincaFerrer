@@ -1,0 +1,44 @@
+<% admin_actions = false unless local_assigns.has_key? :admin_actions %>
+<% divider = false unless local_assigns.has_key? :divider %>
+<% preview = false unless local_assigns.has_key? :preview %>
+<% link = false unless local_assigns.has_key? :link %>
+
+<% if preview %>
+	<div class="division">
+		<div class="card">
+			<div class="card-image-container">
+				<%= image_tag article.image(:thumb), class: 'card-image' %>
+			</div>
+			<div class="card-caption">
+				<h3 class="card-title"><%= article.title %></h3>
+				<div class="card-text"><%= article.text_short %></div>
+				<%= link_to 'Ver más.', news_article_path(article), class: 'tilted' %>
+			</div>
+		</div>
+	</div>
+<% else %>
+	<section class="content">
+		<div class="container">
+			<article class="article">
+				<div class="article-image-container">
+					<%= image_tag article.image(:normal), class: 'article-image' %>
+				</div>
+				<div class="article-caption">
+					<h2><i><%= article.title %></i></h2>
+					<div class="p"><%= article.text.html_safe %></div>
+					<% if admin_actions %>
+						<%= link_to 'Edit', edit_article_path(article) %> |
+						<%= link_to 'Back', articles_path %>
+					<% elsif link %>
+						<%= link_to 'Ver más.', news_path, class: 'tilted' %>
+					<% end %>
+				</div>
+			</article>
+		</div>
+	</section>
+	<% if divider %>
+		<section class="container" data-index="<%= article_counter %>">
+			<div class="divider grey"><span style="background-color:#FFF"></span></div>
+		</section>
+	<% end %>
+<% end %>

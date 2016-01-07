@@ -19,53 +19,6 @@
 	</div>
 </section>
 <section class="content-limit divided divide-xs-2 divide-sm-4">
-	<div class="division">
-		<div class="card">
-			<div class="card-image-container">
-				<%= image_tag 'news-1.jpg', class: 'card-image' %>
-			</div>
-			<div class="card-caption">
-				<h3 class="card-title">Viento Sur Fruity & Sweet</h3>
-				<p class="card-text">Finca Ferrer, la bodega argentina del Grupo Freixenet, tiene una novedad dulce: Viento Sur Fruity & Sweet. Se trata de un varietal 100% Malbec elaborado en Gualtallary, Valle de Uco, Mendoza, a partir de uvas cosechadas a mano en un terroir a 1300 metros sobre el nivel del mar....</p>
-				<%= link_to 'Ver más.', news_path, class: 'tilted' %>
-			</div>
-		</div>
-	</div>
-	<div class="division">
-		<div class="card">
-			<div class="card-image-container">
-				<%= image_tag 'news-2.jpg', class: 'card-image' %>
-			</div>
-			<div class="card-caption">
-				<h3 class="card-title">La primavera trae un Malbec Fresco y Dulce</h3>
-				<p class="card-text">Se trata de un varietal 100% Malbec elaborado en Gualtallary, Valle de Uco, Mendoza, a partir de uvas cosechadas a mano en un terroir a 1300 metros sobre el nivel del mar, ideal para obtener uvas de gran calidad...</p>
-				<%= link_to 'Ver más.', news_path, class: 'tilted' %>
-			</div>
-		</div>
-	</div>
-	<div class="division">
-		<div class="card">
-			<div class="card-image-container">
-				<%= image_tag 'news-3.jpg', class: 'card-image' %>
-			</div>
-			<div class="card-caption">
-				<h3 class="card-title">Vino torrontés: 10 opciones para celebrar la llegada de la primavera</h3>
-				<p class="card-text">La propuesta tiene algo de arbitrario, es cierto, pero qué mejor que celebrar la llegada de la primavera con vinos tan refrescantes y bebibles como pueden ser los modernos torronteses. Hace rato que buena parte de los blancos que...</p>
-				<%= link_to 'Ver más.', news_path, class: 'tilted' %>
-			</div>
-		</div>
-	</div>
-	<div class="division">
-		<div class="card">
-			<div class="card-image-container">
-				<%= image_tag 'news-4.jpg', class: 'card-image' %>
-			</div>
-			<div class="card-caption">
-				<h3 class="card-title">Viento de Primavera</h3>
-				<p class="card-text">Con los nuevos aires de esta primavera, Finca Ferrer, la bodega argentina del Grupo Freixenet, tiene una novedad dulce: Viento Sur Fruity & Sweet. Se trata de un varietal 100% Malbec elaborado en Gualtallary, Valle de Uco, Mendoza, a partir de uvas cosechadas a mano en un terroir...</p>
-				<%= link_to 'Ver más.', news_path, class: 'tilted' %>
-			</div>
-		</div>
-	</div>
+	<%= render @articles, preview: true %>
 </section>
 <%= render 'newsletter' %>

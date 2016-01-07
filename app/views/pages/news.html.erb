@@ -1,31 +1,4 @@
-<section class="content">
-	<div class="container">
-		<article class="article">
-			<div class="article-image-container">
-				<%= image_tag 'news-big-1.jpg', class: 'article-image' %>
-			</div>
-			<div class="article-caption">
-				<h2><i>Viento Sur Fruity & Sweet</i></h2>
-				<p>Finca Ferrer, la bodega argentina del Grupo Freixenet, tiene una novedad dulce: Viento Sur Fruity & Sweet. Se trata de un varietal 100% Malbec elaborado en Gualtallary, Valle de Uco, Mendoza, a partir de uvas cosechadas a mano en un terroir a 1300 metros sobre el nivel del mar, ideal para obtener uvas de gran calidad, plenas de aromas y sabores.<br><br>El color de esta nueva etiqueta de la línea Viento Sur es brillante profundo de color cereza, con toques rosas y violetas y lágrimas bien conformadas.</p>
-				<%= link_to 'Ver más.', '#', class: 'tilted' %>
-			</div>
-		</article>
-	</div>
-</section>
-<section class="container">
-	<div class="divider grey"><span style="background-color:#FFF"></span></div>
-</section>
-<section class="content">
-	<div class="container">
-		<article class="article">
-			<div class="article-image-container">
-				<%= image_tag 'news-big-2.jpg', class: 'article-image' %>
-			</div>
-			<div class="article-caption">
-				<h2><i>La primavera trae un Malbec fresco y dulce</i></h2>
-				<p>Llega una novedad de Finca Ferrer, la bodega argentina del Grupo Freixenet: Viento Sur Fruity & Sweet, un Malbec fresco, dulce y fácil de beber.<br><br>Se trata de un varietal 100% Malbec elaborado en Gualtallary, Valle de Uco, Mendoza, a partir de uvas cosechadas a mano en un terroir a 1300 metros sobre el nivel del mar, ideal&hellip;</p>
-				<%= link_to 'Ver más.', '#', class: 'tilted' %>
-			</div>
-		</article>
-	</div>
-</section>
+<style type="text/css">
+	[data-index="<%= @articles.count - 1 %>"] { display:none; }
+</style>
+<%= render @articles, divider: true %>
