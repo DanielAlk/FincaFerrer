@@ -13,6 +13,8 @@ module ApplicationHelper
 			@branch.title + ' | Finca Ferrer'
 		when 'news'
 			'Novedades | Finca Ferrer'
+		when 'news_article'
+			@article.title + ' | Finca Ferrer'
 		when 'awards'
 			'Premios | Finca Ferrer'
 		when 'contact'
