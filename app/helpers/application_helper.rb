@@ -50,6 +50,8 @@ module ApplicationHelper
 			asset_path 'sunrise.jpg'
 		when 'news'
 			asset_path 'field-and-clouds.jpg'
+		when 'news_article'
+			asset_path 'field-and-clouds.jpg'
 		else
 			asset_path 'graves.jpg'
 		end
