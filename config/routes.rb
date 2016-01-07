@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
 
+  get 'admin' => 'admins#index'
+  get 'admin/list' => 'admins#list'
+  match 'admin' => 'admins#destroy', via: :delete
+  devise_for :admins, controllers: { 
+    registrations: 'admins/registrations', 
+    sessions: 'admins/sessions', 
+    passwords: 'admins/passwords'
+  }
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

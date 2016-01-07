@@ -1,0 +1,67 @@
+<% if admin_signed_in? %>
+	<div class="admin-info">
+		<b>Admin: <%= current_admin.email %></b>
+		<%= '<em>Usuario administrador</em>'.html_safe if current_admin.administrator? %>
+	</div>
+	<div class="admin-buttons">
+		<div>
+			<%= link_to 'Admin', admin_path %>
+			<%= link_to 'Sign out', destroy_admin_session_path, method: 'delete' %>
+		</div>
+		<div>
+			<div>Ver</div>
+			<%= link_to 'Lineas', branches_path %>
+			<%= link_to 'Productos', products_path %>
+			<%= link_to 'Novedades', articles_path %>
+			<%= link_to 'Contactos', contacts_path %>
+			<%= link_to 'Suscripciones', subscribers_path %>
+		</div>
+		<div>
+			<div>Crear</div>
+			<%= link_to 'Linea', new_branch_path %>
+			<%= link_to 'Producto', new_product_path %>
+			<%= link_to 'Novedad', new_article_path %>
+		</div>
+		<% if @branch.present? && @branch.title.present? %>
+			<div>
+				<div>Linea</div>
+				<%= link_to @branch.title, @branch, class: 'show' %>
+				<%= link_to 'Edit', edit_branch_path(@branch), class: 'edit' %>
+				<%= link_to 'Destroy', @branch, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @product.present? && @product.title.present? %>
+			<div>
+				<div>Producto</div>
+				<%= link_to @product.title, @product, class: 'show' %>
+				<%= link_to 'Edit', edit_product_path(@product), class: 'edit' %>
+				<%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @article.present? && @article.title.present? %>
+			<div>
+				<div>Novedad</div>
+				<%= link_to @article.title, @article, class: 'show' %>
+				<%= link_to 'Edit', edit_article_path(@article), class: 'edit' %>
+				<%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @contact.present? && @contact.name.present? %>
+			<div>
+				<div>Contacto</div>
+				<%= link_to @contact.name, @contact, class: 'show' %>
+				<%= link_to 'Destroy', @contact, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @subscriber.present? && @subscriber.email.present? %>
+			<div>
+				<div>Suscripcion</div>
+				<%= link_to @subscriber.email, @subscriber, class: 'show' %>
+				<%= link_to 'Destroy', @subscriber, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+	</div>
+	<% content_for :extra_js do %>
+		Admin.init();
+	<% end %>
+<% end %>

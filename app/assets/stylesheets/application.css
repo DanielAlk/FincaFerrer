@@ -23,5 +23,6 @@
  *= require form
  *= require main-image
  *= require custom
+ *= require admins
  *= require_self
  */

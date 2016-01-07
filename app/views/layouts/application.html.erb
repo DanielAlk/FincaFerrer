@@ -4,7 +4,7 @@
 	<%= render 'layouts/head' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= 'admin' if admin_signed_in? %>">
 <%= render 'layouts/navigation' %>
 <%= render 'layouts/main_image' %>
 <%= yield %>
