@@ -4,16 +4,6 @@ Forms.newSubscriber = function() {
 	var $form = $('#new_subscriber');
 	var $email_field = $('#subscriber_email');
 
-	var label = function(text) {
-		return $('<label>', {
-			id: 'subscriber_email-error',
-			for: 'subscriber_email',
-			class: 'error',
-			text: text,
-			style: 'display: inline-block;'
-		});
-	};
-
 	$form.validate({
 		submitHandler: function() {
 			$.post($form.attr('action'), $form.serialize(), function(data) {
@@ -28,6 +18,24 @@ Forms.newSubscriber = function() {
 				} else {
 					Utils.message('Ocurrió un error, intenta de nuevo más tarde.');
 				}
+			});
+		}
+	});
+};
+
+Forms.newContact = function() {
+	var $form = $('#new_contact');
+
+	$form.validate({
+		submitHandler: function() {
+			$.post($form.attr('action'), $form.serialize(), function(data) {
+				Utils.message('Gracias por contactarte con nosotros');
+				$form.find('label.error').remove();
+				$form.get(0).reset();
+			}, 'json')
+			.fail(function(data) {
+				$form.find('label.error').remove();
+				Utils.message('Ocurrió un error, intenta de nuevo más tarde.');
 			});
 		}
 	});

@@ -1,3 +1,6 @@
+<% content_for :extra_js do %>
+	Forms.newContact();
+<% end %>
 <footer>
 	<div class="container">
 		<div class="col-sm-4">
@@ -30,18 +33,18 @@
 		</div>
 		<div class="col-sm-5">
 			<h3><i>Contactanos</i></h3>
-			<%= form_tag '#' do %>
+			<%= form_for Contact.new do |f| %>
 				<div class="form-group">
-					<%= text_field_tag 'name', nil, class: 'form-control', placeholder: 'Nombre' %>
+					<%= f.text_field 'name', class: 'form-control', placeholder: 'Nombre', required: true %>
 				</div>
 				<div class="form-group">
-					<%= email_field_tag 'email', nil, class: 'form-control', placeholder: 'Email' %>
+					<%= f.email_field 'email', class: 'form-control', placeholder: 'Email', required: true %>
 				</div>
 				<div class="form-group">
-					<%= text_area_tag 'Mensaje', nil, class: 'form-control', placeholder: 'Mensaje', rows: 3 %>
+					<%= f.text_area 'message', class: 'form-control', placeholder: 'Mensaje', rows: 3, required: true %>
 				</div>
 				<div class="form-group">
-					<%= submit_tag 'Enviar Mensaje', class: 'btn btn-lg btn-primary' %>
+					<%= f.submit 'Enviar Mensaje', class: 'btn btn-lg btn-primary' %>
 				</div>
 			<% end %>
 		</div>

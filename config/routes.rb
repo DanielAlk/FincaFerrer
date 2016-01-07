@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'novedades' => 'pages#news', as: :news
   get 'novedades/:article_id' => 'pages#news_article', as: :news_article
   get 'premios' => 'pages#awards', as: :awards
-  get 'contacto' => 'pages#contact', as: :contact
+  get 'contacto' => 'pages#contact', as: :contact_page
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :products
   resources :subscribers
   resources :articles
+  resources :contacts
 
   # Example resource route with options:
   #   resources :products do
