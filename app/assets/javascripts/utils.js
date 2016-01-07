@@ -30,3 +30,8 @@ Utils.nextSection = function() {
 		$('html, body').stop(true, true).animate({ scrollTop: $target.offset().top });
 	});
 };
+
+Utils.message = function(text) {
+	var $modal = $('#modalGeneric');
+	$modal.modal('show').find('p').text(text);
+};

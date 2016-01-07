@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106224005) do
+ActiveRecord::Schema.define(version: 20160107031350) do
 
   create_table "branches", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20160106224005) do
   end
 
   add_index "products", ["branch_id"], name: "index_products_on_branch_id", using: :btree
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true, using: :btree
 
   add_foreign_key "products", "branches"
 end

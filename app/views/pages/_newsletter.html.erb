@@ -1,15 +1,18 @@
+<% content_for :extra_js do %>
+	Forms.newSubscriber();
+<% end %>
 <section class="content mustard relative">
 	<div class="container">
 		<div class="newsletter-form-container">
 			<h2><i>Newsletter</i></h2>
 			<p>Suscribite para recibir las ultimas novedades sobre promociones y lanzamientos.</p>
-			<%= form_tag '#', class: 'form-horizontal' do %>
+			<%= form_for Subscriber.new, :html => { class: 'form-horizontal' } do |f| %>
 				<div class="form-group">
 					<div class="col-xs-9">
-						<%= email_field_tag 'email', nil, class: 'form-control form-control-lg', placeholder: 'Tu email aquí' %>
+						<%= f.email_field 'email', class: 'form-control form-control-lg', placeholder: 'Tu email aquí', required: true %>
 					</div>
 					<div class="col-xs-3">
-						<%= submit_tag 'Enviar', class: 'btn btn-block btn-default btn-lg' %>
+						<%= f.submit 'Enviar', class: 'btn btn-block btn-default btn-lg' %>
 					</div>
 				</div>
 			<% end %>

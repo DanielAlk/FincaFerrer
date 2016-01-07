@@ -17,15 +17,11 @@
 	</div>
 </section>
 <%= render 'layouts/footer' %>
+<%= render 'modals/generic' %>
+<%= render 'modals/notice' %>
 <script>
   $(function() {
   	<%= yield :extra_js if content_for? :extra_js %>
-    <% if notice.present? %>
-      alert('<%= notice %>');
-    <% end %>
-    <% if alert.present? %>
-      alert('<%= alert %>');
-    <% end %>
   });
 </script>
 </body>

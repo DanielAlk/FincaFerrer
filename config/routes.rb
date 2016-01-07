@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :branches
   resources :products
+  resources :subscribers
 
   # Example resource route with options:
   #   resources :products do
