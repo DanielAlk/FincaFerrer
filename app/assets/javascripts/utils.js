@@ -10,7 +10,7 @@ Utils.startMap = function(elementId) {
 		disableDefaultUI: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 	});
-	geocoder.geocode({ 'address' : 'Avenida Sucre 2074, Beccar, Buuenos Aires, Argentina.' }, function(results, status) {
+	geocoder.geocode({ 'address' : 'Camino Estancia Silva S/N, Gualtallary, Tupungato, Provincia de Mendoza.' }, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
 			map.setCenter(results[0].geometry.location);
 			var marker = new google.maps.Marker({
