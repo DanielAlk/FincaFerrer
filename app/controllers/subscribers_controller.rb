@@ -30,6 +30,7 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       if @subscriber.save
+        AdminNotifier.subscribers(@subscriber).deliver_now
         format.html { redirect_to @subscriber, notice: 'Gracias por subscribirte a nuestra Newsletter.' }
         format.json { render :show, status: :created, location: @subscriber }
       else
