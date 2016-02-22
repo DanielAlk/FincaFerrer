@@ -17,6 +17,12 @@
 				</ul>
 			</nav>
 		</div>
+		<div class="locale-switcher">
+			<a href="<%= '?hl=' + (I18n.locale.to_s == 'es' ? 'en' : 'es') %>" class="<%= I18n.locale.to_s %>">
+				<%= image_tag 'flag-uk.png', class: 'en' %>
+				<%= image_tag 'flag-es.png', class: 'es' %>
+			</a>
+		</div>
 		<div class="header-social hidden">
 			<div class="header-social-container">
 				<%= link_to '#', class: 'facebook' do %>
