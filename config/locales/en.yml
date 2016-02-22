@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home: "Home"
+  our_winery: "Our Winery"
+  products: "Products"
+  news: "News"
+  contact: "Contact"
+  awards: "Awards"
+  location: "Location"
+  spirit: "Spirit"
+  your_email_here: "Your email here"
+  contact_us: "Contact us"
+  all_rights_reserved: "All rights reserved."
+  name: "Name"
+  email: "Email"
+  message: "Message"
+  send_message: "Send Message"
+  winery:
+    description: "Among Tupungato and Tupungatito volcanoes, like a child holding the hands of both parents facing the reflex of the sun, Don José Ferrer Sala found this perfect paradise at the foot of the Andes. In that unique place this winery’s dreams started in 2003. Thanks to the land where it is located, our vineyard creates delicate and strong, authentic and particular grapes. During the day, the bright sun bathes our vineyard with its strong rays. At night, the soft and fresh breeze makes time stand still. During the day, the skin of the grape darkens and fills with aroma and taste. At night, the valley stays silent and the mature plant reflects on its complexity."
+    text: "All the staff that integrate Finca Ferrer estate, we search restlessly for the communion with quality and excellence."
+    location:
+      text_html: "Finca Ferrer estate is in the prestigious Gualtallary region in Tupungato, a sub-region of the Uco Valley in the province of Mendoza.<br><br>There, in 317 ha more than 1300 meters above sea level, it gives birth to exquisite wines. Malbec, Syrah, Pinot Noir, Tempranillo, Chardonnay and Torrontes varietal grapes rest their passion on sandy, rocky and inorganic soil with limestone foundation.<br><br>With exceptional drainage and the help of the characteristic winds, the vine keeps healthy and powerful from its birth. The wide thermal amplitude, solar intensity and low night temperatures create better colour and aroma fruit."
+    spirit:
+      title: "Our winery is the encounter of two worlds that together show the perfect balance between:"
+      text_html: "Tradition and Modernity.<br>Yesterday’s wisdom and curiosity.<br>Small things in life and the bigger sense.<br>Experience of European lineage devoted to wine and the virtues<br>of the young lands of Argentina.<br>Memories of the past and future dreams.<br>Learning and new challenges.<br>Greatness and love for details.<br>Our grandparent’s knowledge and our children’s amazement.<br>Sensibility and passion.<br>History and adventure.<br>Generation and spontaneity."
+      bottom: "Finca Ferrer. A unique place. A unique wine."
+  newsletter:
+    text: "Please leave us your email to subscribe to our newsletter and get the latest news and arrivals of Finca Ferrer."

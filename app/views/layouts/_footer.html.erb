@@ -33,25 +33,25 @@
 			</div>
 		</div>
 		<div class="col-sm-5">
-			<h3><i>Contactanos</i></h3>
+			<h3><i><%= t 'contact_us' %></i></h3>
 			<%= form_for Contact.new do |f| %>
 				<div class="form-group">
-					<%= f.text_field 'name', class: 'form-control', placeholder: 'Nombre', required: true %>
+					<%= f.text_field 'name', class: 'form-control', placeholder: t('name'), required: true %>
 				</div>
 				<div class="form-group">
-					<%= f.email_field 'email', class: 'form-control', placeholder: 'Email', required: true %>
+					<%= f.email_field 'email', class: 'form-control', placeholder: t('email'), required: true %>
 				</div>
 				<div class="form-group">
-					<%= f.text_area 'message', class: 'form-control', placeholder: 'Mensaje', rows: 3, required: true %>
+					<%= f.text_area 'message', class: 'form-control', placeholder: t('message'), rows: 3, required: true %>
 				</div>
 				<div class="form-group">
-					<%= f.submit 'Enviar Mensaje', class: 'btn btn-lg btn-primary' %>
+					<%= f.submit t('send_message'), class: 'btn btn-lg btn-primary' %>
 				</div>
 			<% end %>
 		</div>
 	</div>
 	<div class="footer-footer">
-		&reg; 2015 - Finca Ferrer. Todos los derechos reservados. &nbsp;&nbsp;&nbsp; Powered by
+		&reg; 2016 - Finca Ferrer. <%= t 'all_rights_reserved' %>&nbsp;&nbsp;&nbsp;Powered by
 		<%= link_to 'http://www.vertigodesign.com.ar', taget: '_blank' do %>
 			<%= image_tag 'logo-vertigo.png' %>
 		<% end %>

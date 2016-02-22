@@ -1,0 +1,48 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  home: "Home"
+  our_winery: "Nuestra Bodega"
+  products: "Productos"
+  news: "Novedades"
+  contact: "Contacto"
+  awards: "Premios"
+  location: "Ubicación"
+  spirit: "Espíritu"
+  your_email_here: "Tu email aquí"
+  contact_us: "Contactanos"
+  all_rights_reserved: "Todos los derechos reservados."
+  name: "Nombre"
+  email: "Email"
+  message: "Mensaje"
+  send_message: "Enviar Mensaje"
+  winery:
+    description: "Entre los volcanes Tupungato y Tupungatito, allí como un hijo de la mano de ambos padres de cara al reflejo del sol, Don José Ferrer Sala encontró este perfecto paraíso al pie de la Coordillera de los Andes. En ese lugar tan único comenzaron los sueños de esta bodega en el año 2003. Gracias al suelo en el que se encuentra, nuestra viña genera varietales delicados y fuertes, auténticos y singulares. De día, el radiante sol andino baña nuestros viñedos con sus fuertes rayos. De noche, la suave y fresca brisa detiene por momentos el tiempo. De día, la piel de la uva se oscurece y gana en perfume y sabor. De noche, el valle se calla y la planta madura reflexiona en su complejidad."
+    text: "Todos los que conformamos Finca Ferrer buscamos incansablemente la comunión con la calidad y la excelencia."
+    location:
+      text_html: "Finca Ferrer se encuentra en la prestigiosa región de Gualtallary en Tupungato, una subregión del Valle de Uco en la provincia de Mendoza.<br><br>Allí, en sus 317 hectáreas a más de 1300 metrosde altura sobre el nivel del mar, da vida a exquisitos vinos. Los varietales Malbec, Syrah, Pinot Noir, Tempranillo, Chardonnay y Torrontés reposan en sus pasiones, sobre un suelo arenoso, rocoso e inorgánico con base calcárea.<br><br>Con un drenaje excepcional y la ayuda de los característicos vientos, la planta se mantiene sana y potente desde su concepción. La amplitud térmica de 16 Co con gran intensidad solar y bajas temperaturas nocturnas generan frutas con más color y aroma."
+    spirit:
+      title: "Nuestra bodega es el encuentro de dos mundos, que juntos son el equilibrio perfecto entre:"
+      text_html: "Lo tradicional y lo contemporáneo.<br>La sabiduría de antaño y la curiosidad.<br>Las pequeñas cosas de la vida y el mayor sentido.<br>La experiencia de un linaje europeo dedicado al vino y las <br>virtudes de las tierras jóvenes de Argentina.<br>Los recuerdos del pasado y los sueños futuros.<br>El aprendizaje y los nuevos desafíos.<br>El toque de grandeza y el amor por los detalles.<br>El conocimiento de nuestros abuelos y el asombro de nuestros hijos. <br>Lo sensato y lo pasional.<br>La historia y la aventura.<br>Lo generacional y lo espontáneo."
+      bottom: "Finca Ferrer un lugar único, un vino único."
+  newsletter:
+    text: "Suscribite para recibir las ultimas novedades sobre promociones y lanzamientos."

@@ -9,11 +9,11 @@
 		<div class="navigation">
 			<nav role="navigation">
 				<ul class="list-inline">
-					<li><%= link_to 'Home', root_path, class: nav_class('home') %></li>
-					<li><%= link_to 'Nuestra bodega', about_path, class: nav_class('about') %></li>
-					<li><%= link_to 'Productos', branches_page_path, class: nav_class(['products', 'branches']) %></li>
-					<li><%= link_to 'Novedades', news_path, class: nav_class(['news', 'news_article']) %></li>
-					<li><%= link_to 'Contacto', contact_page_path, class: nav_class('contact') %></li>
+					<li><%= link_to t('home'), root_path, class: nav_class('home') %></li>
+					<li><%= link_to t('our_winery'), about_path, class: nav_class('about') %></li>
+					<li><%= link_to t('products'), branches_page_path, class: nav_class(['products', 'branches']) %></li>
+					<li><%= link_to t('news'), news_path, class: nav_class(['news', 'news_article']) %></li>
+					<li><%= link_to t('contact'), contact_page_path, class: nav_class('contact') %></li>
 				</ul>
 			</nav>
 		</div>
