@@ -47,3 +47,11 @@ en:
       bottom: "Finca Ferrer. A unique place. A unique wine."
   newsletter:
     text: "Please leave us your email to subscribe to our newsletter and get the latest news and arrivals of Finca Ferrer."
+  forms:
+    subscriber:
+      success: "Thanks for subscribing to our Newsletter"
+      error:
+        unique: "The email address you entered is already subscribed to Newsletter"
+    contact:
+      success: "Thank you for contacting us."
+    unknown_error: "An error occurred, please try again later."

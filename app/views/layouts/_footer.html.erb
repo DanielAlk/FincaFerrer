@@ -1,5 +1,8 @@
 <% content_for :extra_js do %>
-	Forms.newContact();
+	Forms.newContact({
+		success: "<%= t 'forms.contact.success' %>",
+		error: "<%= t 'forms.unknown_error' %>"
+	});
 <% end %>
 <footer>
 	<div class="container">

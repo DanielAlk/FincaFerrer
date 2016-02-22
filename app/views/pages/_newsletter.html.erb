@@ -1,5 +1,11 @@
 <% content_for :extra_js do %>
-	Forms.newSubscriber();
+	Forms.newSubscriber({
+		success: "<%= t 'forms.subscriber.success' %>",
+		error: {
+			unique: "<%= t 'forms.subscriber.error.unique' %>",
+			unknown: "<%= t 'forms.unknown_error' %>"
+		}
+	});
 <% end %>
 <section class="content mustard relative">
 	<div class="container">

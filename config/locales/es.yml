@@ -47,3 +47,11 @@ es:
       bottom: "Finca Ferrer un lugar único, un vino único."
   newsletter:
     text: "Suscribite para recibir las ultimas novedades sobre promociones y lanzamientos."
+  forms:
+    subscriber:
+      success: "Gracias por subscribirte a nuestra Newsletter"
+      error:
+        unique: "El email que has ingresado ya esta subscripto al Newsletter"
+    contact:
+      success: "Gracias por contactarte con nosotros."
+    unknown_error: "Ocurrió un error, intenta de nuevo más tarde."
