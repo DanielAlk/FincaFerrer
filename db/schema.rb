@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222075601) do
+ActiveRecord::Schema.define(version: 20160222231808) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",        null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160222075601) do
   create_table "branches", force: :cascade do |t|
     t.string   "title",              limit: 255
     t.text     "text",               limit: 65535
+    t.text     "text_en",            limit: 65535
     t.string   "color",              limit: 255
     t.string   "logo_file_name",     limit: 255
     t.string   "logo_content_type",  limit: 255
@@ -61,7 +62,6 @@ ActiveRecord::Schema.define(version: 20160222075601) do
     t.string   "slug",               limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.text     "text_en",            limit: 65535
   end
 
   add_index "branches", ["slug"], name: "index_branches_on_slug", unique: true, using: :btree
@@ -88,21 +88,25 @@ ActiveRecord::Schema.define(version: 20160222075601) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.string   "title_en",           limit: 255
-    t.text     "text",               limit: 65535
-    t.text     "text_en",            limit: 65535
-    t.string   "file_file_name",     limit: 255
-    t.string   "file_content_type",  limit: 255
-    t.integer  "file_file_size",     limit: 4
+    t.string   "title",                limit: 255
+    t.string   "title_en",             limit: 255
+    t.text     "text",                 limit: 65535
+    t.text     "text_en",              limit: 65535
+    t.string   "file_file_name",       limit: 255
+    t.string   "file_content_type",    limit: 255
+    t.integer  "file_file_size",       limit: 4
     t.datetime "file_updated_at"
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
+    t.string   "image_file_name",      limit: 255
+    t.string   "image_content_type",   limit: 255
+    t.integer  "image_file_size",      limit: 4
     t.datetime "image_updated_at"
-    t.integer  "branch_id",          limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.integer  "branch_id",            limit: 4
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "file_en_file_name",    limit: 255
+    t.string   "file_en_content_type", limit: 255
+    t.integer  "file_en_file_size",    limit: 4
+    t.datetime "file_en_updated_at"
   end
 
   add_index "products", ["branch_id"], name: "index_products_on_branch_id", using: :btree

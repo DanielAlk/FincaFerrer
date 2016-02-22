@@ -7,7 +7,7 @@
 			<div class="display-mini-caption-content">
 				<h3><i><%= product.t :title %>:</i></h3>
 				<p><%= product.t :text %></p>
-				<%= link_to 'Descargar Ficha individual', product.file.url, class: 'tilted corkscrew', download: product.download unless product.file.blank? %>
+				<%= link_to t('download_individual_file'), product.file_url, class: 'tilted corkscrew', download: product.download unless product.file.blank? %>
 			</div>
 		</div>
 		<div class="divider"><span style="background-color:<%= product.branch.color %>"></span></div>

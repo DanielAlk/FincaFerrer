@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :branch
 
 	has_attached_file :file, default_url: ''
+	has_attached_file :file_en, default_url: ''
 	has_attached_file :image,
 										styles: { normal: "x250" },
 										convert_options: { normal: "-quality 75 -strip" }
@@ -9,7 +10,15 @@ class Product < ActiveRecord::Base
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 	def download
-		self.branch.title + ' ' + self.title
+		self.branch.title + ' ' + self.t(:title)
+	end
+
+	def file_url
+		if I18n.locale == :en and self.file_en.present?
+			self.file_en.url
+		else
+			self.file.url
+		end
 	end
 	
 	def t(attribute_name, locale = nil)
