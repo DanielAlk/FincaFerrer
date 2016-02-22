@@ -4,6 +4,6 @@
 		<h2><i><%= t 'our_winery' %></i></h2>
 		<p class="line-2"><%= t 'winery.description' %></p>
 		<p><b><i><%= t 'winery.text' %></i></b></p>
-		<%= link_to 'Ver más.', about_path, class: 'tilted' if params['action'] == 'home' %>
+		<%= link_to t('see_more'), about_path, class: 'tilted' if params['action'] == 'home' %>
 	</div>
 </section>

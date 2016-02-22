@@ -12,7 +12,7 @@
 			<div class="card-caption">
 				<h3 class="card-title"><%= article.title %></h3>
 				<div class="card-text"><%= article.text_short %></div>
-				<%= link_to 'Ver más.', news_article_path(article), class: 'tilted' %>
+				<%= link_to t('see_more'), news_article_path(article), class: 'tilted' %>
 			</div>
 		</div>
 	</div>
@@ -30,7 +30,7 @@
 						<%= link_to 'Edit', edit_article_path(article) %> |
 						<%= link_to 'Back', articles_path %>
 					<% elsif link %>
-						<%= link_to 'Ver más.', news_path, class: 'tilted' %>
+						<%= link_to t('see_more'), news_path, class: 'tilted' %>
 					<% end %>
 				</div>
 			</article>

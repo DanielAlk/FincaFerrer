@@ -7,14 +7,14 @@
 		<div class="display-caption">
 			<div class="display-caption-content">
 				<%= image_tag branch.logo(:normal) %>
-				<p><%= branch.text %></p>
+				<p><%= branch.t :text %></p>
 				<% if admin_actions %>
 					<div class="admin-actions">
 						<%= link_to 'Edit', edit_branch_path(branch) %> |
 						<%= link_to 'Back', branches_path %>
 					</div>
 				<% else %>
-					<%= link_to 'Ver más.', products_page_path(branch), class: 'tilted corkscrew' %>
+					<%= link_to t('see_more'), products_page_path(branch), class: 'tilted corkscrew' %>
 				<% end %>
 				<div class="divider"><span style="background-color:<%= branch.color %>"></span></div>
 			</div>
