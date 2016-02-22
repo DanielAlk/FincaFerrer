@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107145002) do
+ActiveRecord::Schema.define(version: 20160222075601) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",        null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160107145002) do
     t.string   "slug",               limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.text     "text_en",            limit: 65535
   end
 
   add_index "branches", ["slug"], name: "index_branches_on_slug", unique: true, using: :btree
@@ -88,7 +89,9 @@ ActiveRecord::Schema.define(version: 20160107145002) do
 
   create_table "products", force: :cascade do |t|
     t.string   "title",              limit: 255
+    t.string   "title_en",           limit: 255
     t.text     "text",               limit: 65535
+    t.text     "text_en",            limit: 65535
     t.string   "file_file_name",     limit: 255
     t.string   "file_content_type",  limit: 255
     t.integer  "file_file_size",     limit: 4

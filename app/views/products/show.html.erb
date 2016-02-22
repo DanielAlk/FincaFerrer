@@ -5,12 +5,22 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @product.title %>
+  <%= @product.t :title, :es %>
+</p>
+
+<p>
+  <strong>English Title:</strong>
+  <%= @product.t :title, :en %>
 </p>
 
 <p>
   <strong>Text:</strong>
-  <%= @product.text %>
+  <%= @product.t :text, :es %>
+</p>
+
+<p>
+  <strong>English Text:</strong>
+  <%= @product.t :text, :en %>
 </p>
 
 <p>

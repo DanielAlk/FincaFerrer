@@ -20,8 +20,16 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :title_en, 'English Title' %><br>
+    <%= f.text_field :title_en %>
+  </div>
+  <div class="field">
     <%= f.label :text %><br>
     <%= f.text_area :text %>
+  </div>
+  <div class="field">
+    <%= f.label :text_en, 'English Text' %><br>
+    <%= f.text_area :text_en %>
   </div>
   <div class="field">
     <%= f.label :file %><br>
