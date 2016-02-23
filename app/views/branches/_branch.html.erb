@@ -1,32 +1,34 @@
 <% admin_actions = false unless local_assigns.has_key? :admin_actions %>
-<article class="display" style="background-color:<%= branch.color %>">
-	<div class="container">
-		<div class="display-image-container">
-			<%= image_tag branch.image(:normal), class: 'display-image' %>
-		</div>
-		<div class="display-caption">
-			<div class="display-caption-content">
-				<%= image_tag branch.logo(:normal) %>
-				<p><%= branch.t :text %></p>
-				<% if admin_actions %>
-					<div class="admin-actions">
-						<%= link_to 'Edit', edit_branch_path(branch) %> |
-						<%= link_to 'Back', branches_path %>
-					</div>
-				<% else %>
-					<%= link_to t('see_more'), products_page_path(branch), class: 'tilted corkscrew request-content' %>
-				<% end %>
-				<div class="divider"><span style="background-color:<%= branch.color %>"></span></div>
+<div style="background-color:<%= branch.color %>">
+	<article class="display">
+		<div class="container">
+			<div class="display-image-container">
+				<%= image_tag branch.image(:normal), class: 'display-image' %>
+			</div>
+			<div class="display-caption">
+				<div class="display-caption-content">
+					<%= image_tag branch.logo(:normal) %>
+					<p><%= branch.t :text %></p>
+					<% if admin_actions %>
+						<div class="admin-actions">
+							<%= link_to 'Edit', edit_branch_path(branch) %> |
+							<%= link_to 'Back', branches_path %>
+						</div>
+					<% else %>
+						<%= link_to t('see_more'), products_page_path(branch), class: 'tilted corkscrew request-content' %>
+					<% end %>
+					<div class="divider"><span style="background-color:<%= branch.color %>"></span></div>
+				</div>
 			</div>
 		</div>
-	</div>
-</article>
-<section class="content" style="background-color:<%= branch.color %>;display:none;">
-	<div class="container">
-		<div class="space-xs-S-50">
-			<%= image_tag branch.logo(:normal) %>
-			<%= link_to t('see_less'), "#", class: 'tilted corkscrew toggle-content' %>
+	</article>
+	<section class="content" style="display:none;">
+		<div class="container">
+			<div class="space-xs-S-50">
+				<%= image_tag branch.logo(:normal) %>
+				<%= link_to t('see_less'), "#", class: 'tilted corkscrew toggle-content' %>
+			</div>
+			<div class="row"></div>
 		</div>
-		<div class="row"></div>
-	</div>
-</section>
+	</section>
+</div>
