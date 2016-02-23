@@ -35,3 +35,30 @@ Utils.message = function(text) {
 	var $modal = $('#modalGeneric');
 	$modal.modal('show').find('p').text(text);
 };
+
+Utils.requestProducts = function() {
+	$('.request-content').each(function() {
+		var $this = $(this);
+		var $display = $this.closest('.display');
+		var $content = $display.next('.content');
+		var $container = $content.find('.row');
+		var $toggle = $content.find('.toggle-content');
+		var is_content_requested = false;
+		var requestContent = function() {
+			$.post($this.attr('href'), function(html) {
+				is_content_requested = true;
+				$container.html(html);
+				toggle();
+			});
+		};
+		var toggle = function() {
+			$display.toggle(400);
+			$content.toggle(400);
+		};
+		$this.add($toggle).click(function(e) {
+			e.preventDefault();
+			if (is_content_requested) toggle();
+			else requestContent();
+		});
+	});
+};

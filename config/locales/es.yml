@@ -36,6 +36,7 @@ es:
   message: "Mensaje"
   send_message: "Enviar Mensaje"
   see_more: "Ver más."
+  see_less: "Ver menos."
   download_individual_file: "Descargar Ficha individual"
   international_competition: "Competencia Internacional"
   viento_sur_late_harvest: "Viento Sur Tardío"

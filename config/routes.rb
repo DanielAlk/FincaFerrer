@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   get 'winery' => 'pages#about', as: :about
   get 'products' => 'pages#branches', as: :branches_page
-  get 'products/:branch_id' => 'pages#products', as: :products_page
+  match 'products/:branch_id' => 'pages#products', as: :products_page, via: [:get, :post]
   get 'news' => 'pages#news', as: :news
   get 'news/:article_id' => 'pages#news_article', as: :news_article
   get 'awards' => 'pages#awards', as: :awards

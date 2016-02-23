@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def branches
   end
   def products
+  	if request.post?
+  		render @branch.products
+  	end
   end
   def awards
   end
