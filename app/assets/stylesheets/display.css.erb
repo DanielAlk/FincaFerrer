@@ -14,3 +14,11 @@ img.display-image { height: 100%; width: auto; }
 .display-mini a.tilted { font-size: 1.2em; }
 .display-mini a.tilted[href^=javascript] { color: #C6BFB6; cursor: not-allowed; }
 .display-mini a.tilted[href^=javascript]:hover,.display-mini a.tilted[href^=javascript]:focus {text-shadow: none;}
+
+@media(max-width: 991px) {
+	.display { padding: 50px 0; }
+}
+
+@media(max-width: 767px) {
+	img.display-image { display: none; }
+}

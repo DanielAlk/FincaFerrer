@@ -4,3 +4,14 @@
 
 .split-inverted { position: relative; padding-right: 50%; }
 .split-inverted .split-image { left: auto; right: 0; }
+
+@media(max-width: 991px) {
+	.split { padding-left: 0; }
+	.split-image { width: 100%; z-index: 0; }
+	.split-content { position: relative; background-color: rgba(255,255,2555,0.9); }
+	.split-inverted { padding-right: 0; }
+}
+
+@media(max-width: 767px) {
+	.split-content { padding: 30px 15px; font-size: .9em; }
+}

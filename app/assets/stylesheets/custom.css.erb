@@ -24,14 +24,35 @@ section.title.texture { color: #FFF; background-image: url('<%= asset_path 'titl
 }
 
 /* CUSTOM FOR PRODUCTS IN HOME */
-section.products>.display:nth-child(even) .display-image-container { float: left; text-align: right; }
+section.products>div:nth-child(even) .display-image-container { float: left; text-align: right; }
 
 /* CUSTOM FOR NEWSLETTER SECTION IN HOME */
 .newsletter-form-container {max-width: 465px; padding-right: 15px;}
 .map-home { width: 50%; height: 100%; position: absolute; top: 0; left: 50%; z-index: 99; }
 .map-home>div { height: 100%; }
+@media(max-width: 991px) {
+	.newsletter-form-container { max-width: 50%; }
+}
+@media(max-width: 767px) {
+	.map-home { position: relative; width: 100%; left: 0; height: 250px; margin-bottom: -82px; }
+	.newsletter-form-container { max-width: 100%; padding-right: 0; padding-bottom: 40px; }
+}
 
 /* CUSTOM FORM ADMIN */
 body.admin section.content td { padding: 5px; }
 body.admin section.content td:first-of-type { padding-left: 0; }
 body.admin section.content td:last-of-type { padding-right: 0; }
+
+/* CUSTOM MAP LOCATION IMAGE */
+@media(max-width: 991px) {
+	img[src*="cellar-location-map"] { width: 250px; }
+}
+
+/* RESPONSIVE */
+@media(max-width: 991px) {
+	section.products>div:nth-child(even) .display-image-container { float: left; }
+	img.display-image { height: auto; width: auto; max-width: 150px; max-height: 330px; }
+	.display-image-container { float: right; width: auto; text-align: center; }
+	.display-caption { width: 100%; text-align: left; padding: 0; display: block; }
+	.display .container>div { height: auto; }
+}

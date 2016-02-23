@@ -14,10 +14,10 @@
 			<p><%= t 'newsletter.text' %></p>
 			<%= form_for Subscriber.new, :html => { class: 'form-horizontal' } do |f| %>
 				<div class="form-group">
-					<div class="col-xs-9">
+					<div class="col-xs-12 col-md-9">
 						<%= f.email_field 'email', class: 'form-control form-control-lg', placeholder: t('your_email_here'), required: true %>
 					</div>
-					<div class="col-xs-3">
+					<div class="col-xs-12 col-md-3">
 						<%= f.submit 'Enviar', class: 'btn btn-block btn-default btn-lg' %>
 					</div>
 				</div>
