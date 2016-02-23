@@ -6,21 +6,24 @@
 </head>
 <body class="admin">
 <%= render 'layouts/navigation' %>
-<%= render 'layouts/main_image' %>
-<section class="content admin">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<%= yield %>
+<div class="page-container">
+	<%= render 'layouts/main_image' %>
+	<section class="content admin">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<%= yield %>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<%= render 'layouts/footer' %>
-<%= render 'modals/generic' %>
-<%= render 'modals/notice' %>
+	</section>
+	<%= render 'layouts/footer' %>
+	<%= render 'modals/generic' %>
+	<%= render 'modals/notice' %>
+</div>
 <script>
   $(function() {
+  	Utils.navigation();
   	<%= yield :extra_js if content_for? :extra_js %>
   });
 </script>

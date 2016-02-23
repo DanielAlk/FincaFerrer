@@ -12,6 +12,7 @@
  *
  * require_tree .
  *= require _bootstrap_import
+ *= require _font_awesome_import
  *= require main
  *= require header
  *= require footer

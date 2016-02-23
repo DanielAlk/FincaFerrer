@@ -62,3 +62,28 @@ Utils.requestProducts = function() {
 		});
 	});
 };
+
+Utils.navigation = function() {
+	var $body = $('body');
+	var $closers = $('header, .page-container');
+	var close = function(e) {
+		if ($(this).is('.page-container')) e.preventDefault();
+		$body.removeClass('navigate');
+		$closers.off('click', close);
+			console.log('remove');
+	};
+	var toggle = function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$body.toggleClass('navigate');
+		if ($body.hasClass('navigate')) {
+			console.log('add');
+			$closers.on('click', close);
+		}
+		else {
+			console.log('remove');
+			$closers.off('click', close);
+		}
+	};
+	$('.toggle-menu a').click(toggle);
+};

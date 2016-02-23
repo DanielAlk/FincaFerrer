@@ -9,6 +9,7 @@ header .brand img { width: 210px; height: auto; }
 .header-social-container a.btn { position: absolute; right: 0; top: 0; margin-right: 50px; }
 .header-social-container p { font-style: italic; text-align: left; font-size: .6em; margin-top: 3px; }
 
+.navigation { width: 613px; margin: 0 auto; }
 .navigation nav li { padding-left: 15px; padding-right: 15px; }
 .navigation li a { text-transform: uppercase; position: relative; }
 .navigation li a.active:after { content: ''; display: block; position: absolute; width: calc(100% - 4px); left: 2px; top: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.5); margin-top: 15px; }
@@ -17,3 +18,18 @@ header .brand img { width: 210px; height: auto; }
 .locale-switcher img { width: 30px; height: auto; }
 .locale-switcher a.es>img.es { display: none; }
 .locale-switcher a.en>img.en { display: none; }
+
+@media(max-width: 991px) {
+	.page-container { position: absolute; background-color: #FFF; width: 100%; top: 0; left: 0; -webkit-transition: all 400ms ease-out; -moz-transition: all 400ms ease-out; -ms-transition: all 400ms ease-out; -o-transition: all 400ms ease-out; transition: all 400ms ease-out; }
+	body { background-color: #71695E; }
+	body.navigate { overflow-x: hidden; }
+	body.navigate .page-container { left: calc(100% - 25px); }
+	header { z-index: 1; }
+	header .navigation { display: none; }
+	.header-container { padding: 37px 0; }
+	.toggle-menu { position: absolute; left: 0; font-size: 30px; top: 0; line-height: 30px; margin: 34px 0 0 52px; }
+	.header-container .brand { width: auto; padding: 0; position: relative; margin-top: 0; text-align: center; left: auto; top: -5px; }
+	body>.navigation { color: #FFF; text-align: left; position: absolute; width: calc(100% - 25px); top: 100px; padding-top: 30px; padding-left: 40px; }
+	body>.navigation ul>li { display: list-item; height: 40px; }
+	.navigation li a.active:after { margin-top: 2px; border-width: 3px; }
+}

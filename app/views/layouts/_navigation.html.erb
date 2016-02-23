@@ -23,6 +23,9 @@
 				<%= image_tag 'flag-es.png', class: 'es' %>
 			</a>
 		</div>
+		<div class="toggle-menu">
+			<a href="#"><i class="fa fa-bars"></i></a>
+		</div>
 		<div class="header-social hidden">
 			<div class="header-social-container">
 				<%= link_to '#', class: 'facebook' do %>
@@ -34,3 +37,14 @@
 		</div>
 	</div>
 </header>
+<div class="navigation">
+	<nav role="navigation">
+		<ul class="list-inline">
+			<li><%= link_to t('home'), root_path, class: nav_class('home') %></li>
+			<li><%= link_to t('our_winery'), about_path, class: nav_class('about') %></li>
+			<li><%= link_to t('products'), branches_page_path, class: nav_class(['products', 'branches']) %></li>
+			<li><%= link_to t('news'), news_path, class: nav_class(['news', 'news_article']) %></li>
+			<li><%= link_to t('contact'), contact_page_path, class: nav_class('contact') %></li>
+		</ul>
+	</nav>
+</div>
