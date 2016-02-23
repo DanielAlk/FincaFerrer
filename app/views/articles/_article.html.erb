@@ -10,7 +10,7 @@
 				<%= image_tag article.image(:thumb), class: 'card-image' %>
 			</div>
 			<div class="card-caption">
-				<h3 class="card-title"><%= article.title %></h3>
+				<h3 class="card-title"><%= article.t :title %></h3>
 				<div class="card-text"><%= article.text_short %></div>
 				<%= link_to t('see_more'), news_article_path(article), class: 'tilted' %>
 			</div>
@@ -24,8 +24,8 @@
 					<%= image_tag article.image(:normal), class: 'article-image' %>
 				</div>
 				<div class="article-caption">
-					<h2><i><%= article.title %></i></h2>
-					<div class="p"><%= article.text.html_safe %></div>
+					<h2><i><%= article.t :title %></i></h2>
+					<div class="p"><%= article.t(:text).html_safe %></div>
 					<% if admin_actions %>
 						<%= link_to 'Edit', edit_article_path(article) %> |
 						<%= link_to 'Back', articles_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222231808) do
+ActiveRecord::Schema.define(version: 20160222235021) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",        null: false
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160222231808) do
     t.string   "slug",               limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.string   "title_en",           limit: 255
+    t.text     "text_en",            limit: 65535
   end
 
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
@@ -96,6 +98,10 @@ ActiveRecord::Schema.define(version: 20160222231808) do
     t.string   "file_content_type",    limit: 255
     t.integer  "file_file_size",       limit: 4
     t.datetime "file_updated_at"
+    t.string   "file_en_file_name",    limit: 255
+    t.string   "file_en_content_type", limit: 255
+    t.integer  "file_en_file_size",    limit: 4
+    t.datetime "file_en_updated_at"
     t.string   "image_file_name",      limit: 255
     t.string   "image_content_type",   limit: 255
     t.integer  "image_file_size",      limit: 4
@@ -103,10 +109,6 @@ ActiveRecord::Schema.define(version: 20160222231808) do
     t.integer  "branch_id",            limit: 4
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.string   "file_en_file_name",    limit: 255
-    t.string   "file_en_content_type", limit: 255
-    t.integer  "file_en_file_size",    limit: 4
-    t.datetime "file_en_updated_at"
   end
 
   add_index "products", ["branch_id"], name: "index_products_on_branch_id", using: :btree

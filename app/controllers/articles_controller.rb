@@ -71,6 +71,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :text, :image)
+      params.require(:article).permit(:title, :title_en, :text, :text_en, :image)
     end
 end

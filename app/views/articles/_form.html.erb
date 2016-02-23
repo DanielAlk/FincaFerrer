@@ -21,6 +21,14 @@
     <%= f.text_area :text, rows: 8, class: 'tinymce' %>
   </div>
   <div class="field">
+    <%= f.label :title_en, 'English Title' %><br>
+    <%= f.text_field :title_en %>
+  </div>
+  <div class="field">
+    <%= f.label :text_en, 'Engligh Text' %><br>
+    <%= f.text_area :text_en, rows: 8, class: 'tinymce' %>
+  </div>
+  <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
