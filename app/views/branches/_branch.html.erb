@@ -15,19 +15,22 @@
 							<%= link_to 'Back', branches_path %>
 						</div>
 					<% else %>
-						<%= link_to t('see_more'), products_page_path(branch), class: 'tilted corkscrew request-content' %>
+						<%= link_to products_page_path(branch), class: 'tilted corkscrew request-content' do %>
+							<span class="active"><%= t('see_more') %></span>
+							<span><%= t('see_less') %></span>
+						<% end %>
 					<% end %>
 					<div class="divider"><span style="background-color:<%= branch.color %>"></span></div>
 				</div>
 			</div>
 		</div>
 	</article>
-	<section class="content" style="display:none;">
+	<section class="content inspace-xs-N-0" style="display:none;">
 		<div class="container">
-			<div class="space-xs-S-50">
+			<!--div class="space-xs-S-50">
 				<%= image_tag branch.logo(:normal) %>
 				<%= link_to t('see_less'), "#", class: 'tilted corkscrew toggle-content' %>
-			</div>
+			</div-->
 			<div class="row"></div>
 		</div>
 	</section>

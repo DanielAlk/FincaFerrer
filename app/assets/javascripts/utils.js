@@ -39,6 +39,7 @@ Utils.message = function(text) {
 Utils.requestProducts = function() {
 	$('.request-content').each(function() {
 		var $this = $(this);
+		var $spans = $this.children('span');
 		var $display = $this.closest('.display');
 		var $content = $display.next('.content');
 		var $container = $content.find('.row');
@@ -52,8 +53,8 @@ Utils.requestProducts = function() {
 			});
 		};
 		var toggle = function() {
-			$display.toggle(400);
-			$content.toggle(400);
+			$content.toggle('blind');
+			$spans.toggleClass('active');
 		};
 		$this.add($toggle).click(function(e) {
 			e.preventDefault();
