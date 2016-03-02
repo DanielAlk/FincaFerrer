@@ -58,4 +58,12 @@ module ApplicationHelper
 			asset_path 'graves.jpg'
 		end
 	end
+
+	def locale_class(l)
+		'bold' if I18n.locale.to_s == l.to_s
+	end
+
+	def locale_href(l)
+		I18n.locale.to_s != l.to_s ? '?hl=' + l.to_s : 'javascript:void(0);'
+	end
 end

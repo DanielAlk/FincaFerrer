@@ -18,10 +18,9 @@
 			</nav>
 		</div>
 		<div class="locale-switcher">
-			<a href="<%= '?hl=' + (I18n.locale.to_s == 'es' ? 'en' : 'es') %>" class="<%= I18n.locale.to_s %>">
-				<%= image_tag 'flag-uk.png', class: 'en' %>
-				<%= image_tag 'flag-es.png', class: 'es' %>
-			</a>
+			<a href="<%= locale_href :es %>" class="<%= locale_class :es %>">ES</a>
+			|
+			<a href="<%= locale_href :en %>" class="<%= locale_class :en %>">EN</a>
 		</div>
 		<div class="toggle-menu">
 			<a href="#"><i class="fa fa-bars"></i></a>
