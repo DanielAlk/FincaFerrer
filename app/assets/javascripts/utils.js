@@ -56,7 +56,7 @@ Utils.requestProducts = function() {
 			});
 		};
 		var toggle = function() {
-			$content.stop(true,false).toggle('blind');
+			$content.stop(true,true).toggle('blind');
 			$spans.toggleClass('active');
 		};
 		$this.add($toggle).click(function(e) {
