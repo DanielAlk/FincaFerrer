@@ -45,8 +45,11 @@ Utils.requestProducts = function() {
 		var $container = $content.find('.row');
 		var $toggle = $content.find('.toggle-content');
 		var is_content_requested = false;
+		var is_ajax_active = false;
 		var requestContent = function() {
+			is_ajax_active = true;
 			$.post($this.attr('href'), function(html) {
+				is_ajax_active = false;
 				is_content_requested = true;
 				$container.html(html);
 				toggle();
@@ -58,6 +61,7 @@ Utils.requestProducts = function() {
 		};
 		$this.add($toggle).click(function(e) {
 			e.preventDefault();
+			if (is_ajax_active) return;
 			if (is_content_requested) toggle();
 			else requestContent();
 		});
