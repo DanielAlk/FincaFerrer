@@ -5,14 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
    
   def set_locale
-    I18n.locale = params[:hl] || I18n.default_locale
+    I18n.locale = extract_locale_from_tld || I18n.default_locale
   end
 
-  def default_url_options(options = {})
-  	if I18n.locale != :es
-  		{ hl: I18n.locale }.merge options
-    else
-      options
-    end
+  def extract_locale_from_tld
+    parsed_locale = { 'ar' => 'es' }[request.host.split('.').last]
+    I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
   end
 end

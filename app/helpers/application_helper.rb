@@ -64,6 +64,12 @@ module ApplicationHelper
 	end
 
 	def locale_href(l)
-		I18n.locale.to_s != l.to_s ? '?hl=' + l.to_s : 'javascript:void(0);'
+		if I18n.locale.to_s == l.to_s
+			'javascript:void(0);'
+		elsif l.to_s == 'es'
+			request.url.sub request.host, request.host + '.ar'
+		elsif l.to_s == 'en'
+			request.url.sub request.host, request.host.sub('.com.ar', '.com')
+		end
 	end
 end
