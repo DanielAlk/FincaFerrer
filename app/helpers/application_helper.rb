@@ -59,6 +59,15 @@ module ApplicationHelper
 		end
 	end
 
+	def main_image_class
+		case params['action']
+		when 'home'
+			'main-image-content'
+		else
+			'main-image'
+		end
+	end
+
 	def locale_class(l)
 		'bold' if I18n.locale.to_s == l.to_s
 	end

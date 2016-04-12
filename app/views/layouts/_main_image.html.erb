@@ -2,11 +2,11 @@
 	Utils.nextSection();
 <% end %>
 
-<section class="main-image" style="background-image:url('<%= main_image %>');">
-	<!--
-	<%= image_tag 'logo-finca-ferrer.png' %>
-	<%= link_to '#', class: 'NextSection' do %>
-		<%= image_tag 'arrow-down.png', class: 'arrow-down' %>
+<section class="<%= main_image_class %>" style="background-image:url('<%= main_image %>');">
+	<% if params['action'] == 'home' %>
+		<%= image_tag 'logo-finca-ferrer.png' %>
+		<%= link_to '#', class: 'NextSection' do %>
+			<%= image_tag 'arrow-down.png', class: 'arrow-down' %>
+		<% end %>
 	<% end %>
-	-->
 </section>
