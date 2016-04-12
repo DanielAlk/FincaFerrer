@@ -74,24 +74,7 @@ module ApplicationHelper
 
 	def locale_href(l)
 		if Rails.env.development?
-			if I18n.locale.to_s == l.to_s
-				'javascript:void(0);'
-			elsif l.to_s == 'es' || l.to_s == 'en'
-				uri = URI(request.url)
-			  query = URI.decode_www_form(uri.query || "")
-			  done = false
-			  query.map do |q|
-			  	if q[0] == 'hl'
-			  		q[1] = l.to_s
-			  		done = true
-			  	end
-			  end
-			  unless done
-			  	query << ['hl', l.to_s]
-			  end
-			  uri.query = URI.encode_www_form(query)
-			  uri.to_s
-			end
+			I18n.locale.to_s != l.to_s ? '?hl=' + l.to_s : 'javascript:void(0);'
 		else
 			if I18n.locale.to_s == l.to_s
 				'javascript:void(0);'
