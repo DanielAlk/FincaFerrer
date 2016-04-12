@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'news/:article_id' => 'pages#news_article', as: :news_article
   get 'awards' => 'pages#awards', as: :awards
   get 'contact' => 'pages#contact', as: :contact_page
+  match 'welcome' => 'pages#welcome', as: :welcome, via: [:get, :post]
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

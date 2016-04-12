@@ -26,5 +26,9 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<% unless params['action'] == 'welcome' %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<% else %>
+	<%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
