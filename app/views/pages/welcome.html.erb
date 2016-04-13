@@ -1,10 +1,32 @@
+<% content_for :extra_js do %>
+	Forms.newSubscriber({
+		success: "<%= t 'forms.subscriber.success' %>",
+		error: {
+			unique: "<%= t 'forms.subscriber.error.unique' %>",
+			unknown: "<%= t 'forms.unknown_error' %>"
+		}
+	});
+<% end %>
+
 <div class="content">
 	<header><img class="brand" alt="Finca Ferrer" src="<%= asset_path 'logo-finca-ferrer.png' %>"></header>
 	<section class="container">
-		<div class="locale-switcher">
-			<a href="<%= locale_href :es %>" class="<%= locale_class :es %>">ES</a>
-			|
-			<a href="<%= locale_href :en %>" class="<%= locale_class :en %>">EN</a>
+		<p><%= t 'legal.newsletter_title' %></p>
+		<%= form_for Subscriber.new, :html => { class: 'form-horizontal newsletter-form' } do |f| %>
+			<div class="form-group">
+				<div class="col-xs-12 col-md-8">
+					<%= f.email_field 'email', class: 'form-control', placeholder: t('your_email_here'), required: true %>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<%= f.submit t('words.send'), class: 'btn btn-block btn-default text-uppercase' %>
+				</div>
+			</div>
+		<% end %>
+		<div class="locales">
+			<hr>
+			<a href="<%= locale_href :en %>" class="<%= locale_class :en %>">ENGLISH</a>
+			<a href="<%= locale_href :es %>" class="<%= locale_class :es %>">ESPAÑOL</a>
+			<hr>
 		</div>
 		<p><%= t 'legal.title' %></p>
 		<%= form_tag welcome_path, method: :post, class: 'form-horizontal', id: 'form_birthday', data: { month: Date.today.month, year: Date.today.year } do %>

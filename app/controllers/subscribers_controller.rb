@@ -1,6 +1,7 @@
 class SubscribersController < ApplicationController
   before_action :set_subscriber, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: :create
+  skip_before_action :authenticate_age, only: :create
   layout 'admin'
 
   # GET /subscribers

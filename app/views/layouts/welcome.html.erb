@@ -6,8 +6,12 @@
 </head>
 <body>
 <%= yield %>
+<%= render 'modals/generic' %>
+<%= render 'modals/notice' %>
 <script>
 $(function(){
+	<%= yield :extra_js if content_for? :extra_js %>
+	
 	var $form = $('#form_birthday');
 	$form.find('input').click(function() {
 		$form.find('label.error').remove();
