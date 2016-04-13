@@ -14,5 +14,6 @@
  *= require _bootstrap_import
  *= require _font_awesome_import
  *= require form
+ *= require welcome
  *= require_self
  */

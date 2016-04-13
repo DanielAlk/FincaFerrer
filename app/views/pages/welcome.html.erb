@@ -1,21 +1,27 @@
 <div class="content">
 	<header><img class="brand" alt="Finca Ferrer" src="<%= asset_path 'logo-finca-ferrer.png' %>"></header>
 	<section class="container">
-		<p>Completa tu fecha de nacimiento</p>
+		<div class="locale-switcher">
+			<a href="<%= locale_href :es %>" class="<%= locale_class :es %>">ES</a>
+			|
+			<a href="<%= locale_href :en %>" class="<%= locale_class :en %>">EN</a>
+		</div>
+		<p><%= t 'legal.title' %></p>
 		<%= form_tag welcome_path, method: :post, class: 'form-horizontal', id: 'form_birthday', data: { month: Date.today.month, year: Date.today.year } do %>
 			<div class="form-group">
 				<div class="col-xs-6">
-					<input type="number" min="1" max="12" name="birthday[month]" id="birthday_month" placeholder="Mes" class="form-control" required>
+					<input type="number" min="1" max="12" name="birthday[month]" id="birthday_month" placeholder="<%= t 'words.month' %>" class="form-control" required>
 				</div>
 				<div class="col-xs-6">
-					<input type="number" min="1900" max="<%= (Date.today.year) -1 %>" name="birthday[year]" id="birthday_year" placeholder="Año" class="form-control" required>
+					<input type="number" min="1900" max="<%= (Date.today.year) -1 %>" name="birthday[year]" id="birthday_year" placeholder="<%= t 'words.year' %>" class="form-control" required>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-default">INGRESAR</button>
+			<button type="submit" class="btn btn-default text-uppercase"><%= t 'words.enter' %></button>
 		<% end %>
 	</section>
-	<footer>Beber con moderación.<br>Prohibida su venta a menores de 18 años.</footer>
+	<footer><%= raw t 'legal.label' %></footer>
 </div>
+
 <div class="modal fade" tabindex="-1" role="dialog" id="not_eighteen_modal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -24,7 +30,7 @@
         <img class="brand" alt="Finca Ferrer" src="<%= asset_path 'logo-finca-ferrer.png' %>">
       </div>
       <div class="modal-body">
-        <p>Tenés que ser mayor de 18 años para ingresar</p>
+        <p><%= t 'legal.text' %></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>

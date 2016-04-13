@@ -42,6 +42,14 @@ en:
   viento_sur_late_harvest: "Viento Sur Late Harvest"
   silver_medal: "Silver Medal"
   gold_medal: "Gold Medal"
+  legal:
+    title: "Complete your birthdate"
+    label: "Drinking in moderation.<br>Not for sale to persons under 18 years."
+    modal_text: "You have to be over 18 to enter"
+  words:
+    year: "Year"
+    month: "Month"
+    enter: "Enter"
   winery:
     description: "Among Tupungato and Tupungatito volcanoes, like a child holding the hands of both parents facing the reflex of the sun, Don José Ferrer Sala found this perfect paradise at the foot of the Andes. In that unique place this winery’s dreams started in 2003. Thanks to the land where it is located, our vineyard creates delicate and strong, authentic and particular grapes. During the day, the bright sun bathes our vineyard with its strong rays. At night, the soft and fresh breeze makes time stand still. During the day, the skin of the grape darkens and fills with aroma and taste. At night, the valley stays silent and the mature plant reflects on its complexity."
     text: "All the staff that integrate Finca Ferrer estate, we search restlessly for the communion with quality and excellence."
