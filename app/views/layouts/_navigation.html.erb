@@ -25,15 +25,7 @@
 		<div class="toggle-menu">
 			<a href="#"><i class="fa fa-bars"></i></a>
 		</div>
-		<div class="header-social hidden">
-			<div class="header-social-container">
-				<%= link_to '#', class: 'facebook' do %>
-					<%= image_tag 'icon-facebook.png', class: 'icon-facebook' %>
-				<% end %>
-				<p>Seguinos en Facebook y conectate con nosotros</p>
-				<a href="#" class="btn btn-default">Me Gusta</a>
-			</div>
-		</div>
+		<%= render 'layouts/social', social_class: 'hidden-xs' %>
 	</div>
 </header>
 <div class="navigation">
@@ -45,5 +37,6 @@
 			<li><%= link_to t('news'), news_path, class: nav_class(['news', 'news_article']) %></li>
 			<li><%= link_to t('contact'), contact_page_path, class: nav_class('contact') %></li>
 		</ul>
+		<%= render 'layouts/social', social_class: 'visible-xs' %>
 	</nav>
 </div>

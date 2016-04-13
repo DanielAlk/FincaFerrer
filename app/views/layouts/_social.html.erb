@@ -1,0 +1,13 @@
+<% social_class = '' unless local_assigns.has_key? :social_class %>
+
+<div class="header-social <%= social_class %>">
+	<%= link_to 'https://www.facebook.com/fincaferrer/?fref=ts', target: '_blank' do %>
+		<i class="fa fa-facebook"></i>
+	<% end %>
+	<%= link_to 'https://twitter.com/FincaFerrer', target: '_blank' do %>
+		<i class="fa fa-twitter"></i>
+	<% end %>
+	<%= link_to 'https://www.instagram.com/fincaferrer/', target: '_blank' do %>
+		<i class="fa fa-instagram"></i>
+	<% end %>
+</div>
