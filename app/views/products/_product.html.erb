@@ -7,7 +7,12 @@
 			<div class="display-mini-caption-content">
 				<h3><i><%= product.t :title %>:</i></h3>
 				<p><%= product.t :text %></p>
-				<%= link_to t('download_individual_file'), product.file_url, class: 'tilted corkscrew', download: product.download unless product.file.blank? %>
+				<div>
+					<%= link_to t('download_individual_file'), product.file_url, class: 'tilted corkscrew', download: product.download unless product.file.blank? %>
+				</div>
+				<div>
+					<%= link_to t('words.buy'), product.purchase_url, class: 'btn btn-default' + (product.file.present? ? ' space-xs-N-30' : ''), target: '_blank' unless product.purchase_url.blank? %>
+				</div>
 			</div>
 		</div>
 		<div class="divider"><span style="background-color:<%= product.branch.color %>"></span></div>
