@@ -1,9 +1,60 @@
-<section class="split">
-	<div class="split-image" style="background-image:url('<%= asset_path('field-and-mountains.jpg') %>');"></div>
-	<div class="split-content">
+<% content_for :extra_js do %>
+	new Swiper('.about-swiper', {
+		loop: true,
+		autoplay: 4000,
+		paginationClickable: true,
+		autoplayDisableOnInteraction: false,
+		pagination: '.swiper-pagination',
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev'
+	});
+<% end %>
+
+<section class="split-50">
+	<% unless browser.mobile? %>
+		<div class="split-left hidden-xs">
+	  	<div class="swiper-container about-swiper">
+	  		<div class="swiper-wrapper">
+	  			<% [1,2,3,4,5,6,7,8].each do |n| %>
+				  	<div class="swiper-slide">
+				    	<div class="cover-sm-768" style="background-image: url('<%= asset_path('about-swiper-' + n.to_s + '.jpg') %>');"></div>
+				    </div>
+				  <% end %>
+				</div>
+			  <div class="swiper-pagination"></div>
+			  <div class="swiper-button-prev">
+			  	<i class="fa fa-angle-left" aria-hidden="true"></i>
+			  </div>
+		    <div class="swiper-button-next">
+		    	<i class="fa fa-angle-right" aria-hidden="true"></i>
+		    </div>
+			</div>
+		</div>
+	<% end %>
+	<div class="split-right">
 		<h2><i><%= t 'our_winery' %></i></h2>
 		<p class="line-2"><%= t 'winery.description' %></p>
 		<p><b><i><%= t 'winery.text' %></i></b></p>
 		<%= link_to t('see_more'), about_path, class: 'tilted' if params['action'] == 'home' %>
 	</div>
+	<% if browser.mobile? %>
+		<div class="visible-xs">
+	  	<div class="swiper-container about-swiper">
+	  		<div class="swiper-wrapper">
+	  			<% [1,2,3,4,5,6,7,8].each do |n| %>
+				  	<div class="swiper-slide">
+				    	<div class="cover-xs-320" style="background-image: url('<%= asset_path('about-swiper-' + n.to_s + '.jpg') %>');"></div>
+				    </div>
+				  <% end %>
+				</div>
+			  <div class="swiper-pagination"></div>
+			  <div class="swiper-button-prev">
+			  	<i class="fa fa-angle-left" aria-hidden="true"></i>
+			  </div>
+		    <div class="swiper-button-next">
+		    	<i class="fa fa-angle-right" aria-hidden="true"></i>
+		    </div>
+			</div>
+		</div>
+	<% end %>
 </section>

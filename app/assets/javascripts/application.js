@@ -21,4 +21,5 @@
 //= require tinymce-jquery
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require swiper
 //= require_tree .

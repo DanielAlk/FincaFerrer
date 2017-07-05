@@ -25,7 +25,11 @@ module ApplicationHelper
 	end
 
 	def head_description
-		''
+		'Finca Ferrer ubicada a 1310 metros de altura, en Gualtallary, Tupungato, Valle de Uco, Mendoza, elabora prestigiosos vinos mundialmente premiados.'
+	end
+
+	def head_keywords
+		'Vino, Tupungato, Valle de Uco, Gualtallary, Mendoza, Bodega argentina, Malbec, Pinot Noir, 1310, Acordeon, Viento Sur, Doscumbres.'
 	end
 
 	def head_og_image
