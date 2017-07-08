@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   end
 
   def news
-    @articles = Article.all
+    @articles = Article.order(updated_at: :desc)
   end
 
   def news_article
