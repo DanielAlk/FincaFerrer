@@ -2,7 +2,7 @@ class Branch < ActiveRecord::Base
 	extend FriendlyId
   friendly_id :title, use: :slugged
 	
-	has_many :products
+	has_many :products, dependent: :destroy
 
 	has_attached_file :logo,
 										styles: { normal: "x100>" },
