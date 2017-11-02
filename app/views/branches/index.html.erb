@@ -10,15 +10,15 @@
       <span class="icon">
         <i class="fa fa-border fa-arrows"></i>
       </span>
-      <span><%= branch.title %></span>
+      <span style="width: calc(100% - 155px)"><%= branch.title %></span>
       <span class="control">
-        <%= link_to branch do %>
+        <%= link_to branch, class: 'open' do %>
           <i class="fa fa-border fa-folder-open"></i>
         <% end %>
-        <%= link_to edit_branch_path(branch) do %>
+        <%= link_to edit_branch_path(branch), class: 'edit' do %>
           <i class="fa fa-border fa-edit"></i>
         <% end %>
-        <%= link_to branch, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to branch, method: :delete, data: { confirm: 'Are you sure?' }, class: 'trash' do %>
           <i class="fa fa-border fa-trash"></i>
         <% end %>
       </span>

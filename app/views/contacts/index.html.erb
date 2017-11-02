@@ -1,27 +1,28 @@
 <h1>Listing Contacts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
+<div class="model-list-header">
+  <span style="width: 20%">Nombre</span>
+  <span>Email</span>
+</div>
+
+<ul class="list-unstyled model-list">
+  <% @contacts.each do |contact| %>
+    <li>
+      <span style="width: 20%"><%= contact.name %></span>
+      <span style="width: calc(80% - 130px)"><%= contact.email %></span>
+      <span class="control">
+        <%= link_to contact, class: 'open' do %>
+          <i class="fa fa-border fa-folder-open"></i>
+        <% end %>
+        <%= link_to edit_contact_path(contact), class: 'edit' do %>
+          <i class="fa fa-border fa-edit"></i>
+        <% end %>
+        <%= link_to contact, method: :delete, data: { confirm: 'Are you sure?' }, class: 'trash' do %>
+          <i class="fa fa-border fa-trash"></i>
+        <% end %>
+      </span>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= contact.name %></td>
-        <td><%= contact.email %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+  <% end %>
+</ul>
 
 <!--<%= link_to 'New Contact', new_contact_path %>-->

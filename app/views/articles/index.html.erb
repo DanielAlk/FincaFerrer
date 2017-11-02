@@ -1,25 +1,22 @@
 <h1>Listing Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
+<ul class="list-unstyled model-list">
+  <% @articles.each do |article| %>
+    <li>
+      <span style="width: calc(100% - 115px)"><%= article.title %></span>
+      <span class="control">
+        <%= link_to article, class: 'open' do %>
+          <i class="fa fa-border fa-folder-open"></i>
+        <% end %>
+        <%= link_to edit_article_path(article), class: 'edit' do %>
+          <i class="fa fa-border fa-edit"></i>
+        <% end %>
+        <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'trash' do %>
+          <i class="fa fa-border fa-trash"></i>
+        <% end %>
+      </span>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+  <% end %>
+</ul>
 
 <%= link_to 'New Article', new_article_path %>
