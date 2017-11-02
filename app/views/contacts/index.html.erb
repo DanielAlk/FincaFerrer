@@ -1,15 +1,15 @@
 <h1>Listing Contacts</h1>
 
 <div class="model-list-header">
-  <span style="width: 40%">Nombre</span>
+  <span style="width: 30%">Nombre</span>
   <span>Email</span>
 </div>
 
 <ul class="list-unstyled model-list">
   <% @contacts.each do |contact| %>
     <li>
-      <span style="width: 40%"><%= contact.name %></span>
-      <span style="width: calc(60% - 130px)"><%= contact.email %></span>
+      <span style="width: 30%"><%= contact.name %></span>
+      <span style="width: calc(70% - 130px)"><%= contact.email %></span>
       <span class="control">
         <%= link_to contact, class: 'open' do %>
           <i class="fa fa-border fa-folder-open"></i>
