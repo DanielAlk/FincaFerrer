@@ -1,25 +1,29 @@
+<% content_for :extra_js do %>
+  Admin.sortable('.model-list');
+<% end %>
+
 <h1>Listing Branches</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
+<ul class="list-unstyled model-list">
+  <% @branches.each do |branch| %>
+    <li data-url="<%= branch_path(branch) %>">
+      <span class="icon">
+        <i class="fa fa-border fa-arrows"></i>
+      </span>
+      <span><%= branch.title %></span>
+      <span class="control">
+        <%= link_to branch do %>
+          <i class="fa fa-border fa-folder-open"></i>
+        <% end %>
+        <%= link_to edit_branch_path(branch) do %>
+          <i class="fa fa-border fa-edit"></i>
+        <% end %>
+        <%= link_to branch, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-border fa-trash"></i>
+        <% end %>
+      </span>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @branches.each do |branch| %>
-      <tr>
-        <td><%= branch.title %></td>
-        <td><%= link_to 'Show', branch %></td>
-        <td><%= link_to 'Edit', edit_branch_path(branch) %></td>
-        <td><%= link_to 'Destroy', branch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+  <% end %>
+</ul>
 
 <%= link_to 'New Branch', new_branch_path %>

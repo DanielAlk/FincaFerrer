@@ -1,6 +1,7 @@
 class Branch < ActiveRecord::Base
 	extend FriendlyId
   friendly_id :title, use: :slugged
+  acts_as_list
 	
 	has_many :products, dependent: :destroy
 
@@ -13,6 +14,8 @@ class Branch < ActiveRecord::Base
 										convert_options: { normal: "-quality 75 -strip" }
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 	validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
+
+	validates :position, presence: true
 
 	def t(attribute_name, locale = nil)
 		if locale.present?

@@ -41,6 +41,7 @@ gem 'tinymce-rails'
 gem 'paperclip', '~> 4.3'
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '3.4.1'
+gem 'acts_as_list'
 gem 'browser'
 gem 'swiper-rails'
 

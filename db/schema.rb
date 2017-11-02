@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419050705) do
+ActiveRecord::Schema.define(version: 20171102001026) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",        null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160419050705) do
     t.string   "slug",               limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "position",           limit: 4
   end
 
   add_index "branches", ["slug"], name: "index_branches_on_slug", unique: true, using: :btree
@@ -107,9 +108,9 @@ ActiveRecord::Schema.define(version: 20160419050705) do
     t.integer  "image_file_size",      limit: 4
     t.datetime "image_updated_at"
     t.integer  "branch_id",            limit: 4
+    t.string   "purchase_url",         limit: 255
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.string   "purchase_url",         limit: 255
   end
 
   add_index "products", ["branch_id"], name: "index_products_on_branch_id", using: :btree

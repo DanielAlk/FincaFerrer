@@ -6,7 +6,7 @@ class BranchesController < ApplicationController
   # GET /branches
   # GET /branches.json
   def index
-    @branches = Branch.all
+    @branches = Branch.order(position: :asc)
   end
 
   # GET /branches/1
@@ -71,6 +71,6 @@ class BranchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def branch_params
-      params.require(:branch).permit(:title, :text, :text_en, :color, :logo, :image)
+      params.require(:branch).permit(:title, :text, :text_en, :color, :logo, :image, :position)
     end
 end

@@ -44,7 +44,7 @@ class PagesController < ApplicationController
 
   private
     def set_branches
-      @branches = Branch.all
+      @branches = Branch.order(position: :asc)
     end
 
     def set_branch
